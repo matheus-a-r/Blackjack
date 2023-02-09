@@ -45,11 +45,3 @@
       (card/print-player player-with-more-cards)
       (game player-with-more-cards))
     player))
-
-(def player-1 (player "Matheus Alves"))
-(card/print-player player-1)
-
-(def dealer (player "Dealer"))
-(card/print-player dealer)
-
-(game player-1)
