@@ -28,5 +28,19 @@
      :cards [card1 card2]
      :points points}))
 
-(card/print-player (player "Matheus"))
-(card/print-player (player "Dealer"))
+;conj == append
+;assoc recebe um mapa, chave e valor / associa o valor a chave
+;update recebe um mapa, chave e uma função
+(defn more-card [player]
+  (let [card (new-card)
+        cards (conj (:cards player) card)
+        new-player (update player :cards conj card)
+        points (points-cards cards)]
+    (assoc new-player :points points)))
+
+(def player (player "Matheus Alves"))
+(card/print-player (more-card player))
+
+
+;(card/print-player (player "Matheus"))
+;(card/print-player (player "Dealer"))
